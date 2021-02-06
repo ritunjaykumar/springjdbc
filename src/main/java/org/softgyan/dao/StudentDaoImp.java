@@ -1,12 +1,19 @@
 package org.softgyan.dao;
 
 import org.softgyan.entities.Student;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component("studentDao") // auto wired added file
+
+
 public class StudentDaoImp implements StudentDao {
+
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     public JdbcTemplate getJdbcTemplate() {
